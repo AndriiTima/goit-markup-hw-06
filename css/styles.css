@@ -17,7 +17,9 @@
   --title-margen-bottom: 8px;
   --card-set-gap: 24px;
   --footer-padding-work: 120px;
-
+  --form-text-color: #8e8f99;
+  --from-placeholder-color: rgba(46, 47, 66, 0.4);
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   --anime-fast: 250ms;
 }
 body {
@@ -124,7 +126,7 @@ p {
   content: "";
 
   position: absolute;
-  bottom: 4px;
+  bottom: 0px;
 
   display: block;
   width: 100%;
@@ -439,7 +441,7 @@ p {
   margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #ffffff;
 }
@@ -471,6 +473,105 @@ p {
 .footer-icon-link:hover,
 .footer-icon-link:focus {
   background-color: #31d0aa;
+}
+
+/* -----------------------form-footer------------------------ */
+.forma-footer {
+  margin-right: 0;
+}
+
+.footer-subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.subscribe-item {
+  position: relative;
+  display: block;
+  width: 264px;
+  height: 40px;
+}
+
+.footer-label-email {
+  display: inline-block;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 16px;
+
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+
+  background-color: var(--title-text-color);
+}
+
+.subscribe-item input {
+  display: block;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  color: var(--hero-text-color);
+
+  background-color: var(--title-text-color);
+  border: 1px solid #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.footer-input {
+  width: 100%;
+  height: 100%;
+  outline: transparent;
+  outline-offset: -1px;
+  transition: transform var(--anime-fast) var(--cubic),
+    outline-color var(--anime-fast) var(--cubic);
+}
+
+.footer-input:focus + .footer-label-email,
+.footer-input:not(:placeholder-shown) + .footer-label-email {
+  transform: translateY(-130%);
+}
+
+.footer-input:focus {
+  outline-color: var(--hero-text-color);
+}
+
+.subscribe-item-2 {
+  width: 165px;
+  height: 40px;
+}
+
+.subscribe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
+  border: none;
+  border-radius: 4px;
+
+  transition: background-color var(--anime-fast) var(--cubic);
+
+  cursor: pointer;
+}
+
+.subscribe-btn-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background-color: var(--hover-color);
 }
 
 /**
@@ -621,7 +722,7 @@ p {
   top: 50%;
   transform: translate(-50%, -50%) rotate(0) scale(1);
   opacity: 1;
-  overflow: auto;
+  /* overflow: auto; */
 
   width: 408px;
   min-height: 576px;
@@ -643,9 +744,11 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 24px;
   height: 24px;
   margin-left: auto;
+  margin-bottom: 24px;
 
   color: var(--title-text-color);
 
@@ -668,4 +771,170 @@ p {
   width: 100%;
   height: 100%;
   fill: currentColor;
+}
+/* --------------------form------------------ */
+.form {
+  width: 360px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.form-text {
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--title-text-color);
+  text-align: center;
+}
+
+.from-label {
+  margin-bottom: 4px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: var(--form-text-color);
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+  transition: var(--anime-fast) var(--cubic);
+}
+.label-field {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.user-icon {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 24px;
+
+  fill: #2e2f42;
+
+  pointer-events: none;
+}
+
+.form-input {
+  display: block;
+  height: 40px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-left: 38px;
+  padding-right: 38px;
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+
+  transition: outline-color var(--anime-fast) var(--cubic),
+    fill var(--anime-fast) var(--cubic);
+}
+.form-input:focus + .user-icon {
+  fill: var(--accent-color);
+}
+.form-input:focus {
+  outline-color: var(--accent-color);
+}
+
+.comment-text {
+  display: block;
+  margin-bottom: 16px;
+
+  height: 120px;
+  width: 100%;
+  padding: 8px 16px;
+
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+
+  resize: none;
+
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+
+  transition: outline-color var(--anime-fast) var(--cubic);
+}
+.comment-text::placeholder {
+  color: var(--from-placeholder-color);
+  letter-spacing: 0.04em;
+}
+.comment-text:focus {
+  outline-color: var(--accent-color);
+}
+
+/* -------------checked------------ */
+
+.forma-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.agreement-icon-activ {
+  opacity: 0;
+  transition: opacity var(--anime-fast) var(--cubic);
+}
+.agreement-input:checked + .agreement-svg > .agreement-icon-activ {
+  opacity: 1;
+}
+
+.agreement-icon-default {
+  opacity: 1;
+  transition: opacity var(--anime-fast) var(--cubic);
+  pointer-events: none;
+}
+.agreement-input:checked + .agreement-svg > .agreement-icon-default {
+  opacity: 0;
+}
+
+.policy {
+  font-size: 12px;
+  color: var(--form-text-color);
+  letter-spacing: 0.04em;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.policy-link {
+  color: var(--accent-color);
+  transition: color var(--anime-fast) var(--cubic);
+}
+
+.policy-link:hover,
+.policy-link:focus {
+  color: var(--hover-color);
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+
+  width: 169px;
+  height: 54px;
+
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--hero-text-color);
+
+  background-color: var(--accent-color);
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  transition: background-color var(--anime-fast) cubic-bezier(0.4, 0, 0.2, 1);
+
+  cursor: pointer;
+}
+.form-btn:hover,
+.form-btn:focus {
+  background-color: var(--hover-color);
 }

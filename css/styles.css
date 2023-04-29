@@ -418,7 +418,10 @@ p {
 .footer-wrapper {
   display: flex;
   align-items: baseline;
-  gap: 120px;
+  /* gap: 120px; */
+}
+.footer-box {
+  margin-right: 120px;
 }
 
 .footer-logo .logo-studio {
@@ -435,7 +438,7 @@ p {
 
 .social-madia {
   /* width: 208px; */
-  margin-right: 0;
+  margin-right: 80px;
 }
 .foter-media {
   margin-bottom: 16px;
@@ -475,9 +478,9 @@ p {
   background-color: #31d0aa;
 }
 
-/* -----------------------form-footer------------------------ */
+/* -------------------form-footer--------------- */
 .forma-footer {
-  margin-right: 0;
+  /* margin-right: 0; */
 }
 
 .footer-subscribe {
@@ -487,16 +490,13 @@ p {
   gap: 24px;
 }
 
-.subscribe-item {
+.footer-label {
   position: relative;
-  display: block;
-  width: 264px;
-  height: 40px;
 }
 
 .footer-label-email {
-  display: inline-block;
   position: absolute;
+  display: inline-block;
   transform: translateY(-50%);
   top: 50%;
   left: 16px;
@@ -508,9 +508,10 @@ p {
   background-color: var(--title-text-color);
 }
 
-.subscribe-item input {
+.footer-input {
   display: block;
-
+  width: 264px;
+  height: 40px;
   padding-left: 16px;
   padding-right: 16px;
 
@@ -520,13 +521,9 @@ p {
   border: 1px solid #ffffff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
-}
-
-.footer-input {
-  width: 100%;
-  height: 100%;
   outline: transparent;
   outline-offset: -1px;
+
   transition: transform var(--anime-fast) var(--cubic),
     outline-color var(--anime-fast) var(--cubic);
 }
@@ -540,7 +537,7 @@ p {
   outline-color: var(--hero-text-color);
 }
 
-.subscribe-item-2 {
+.subscribe-btn-box {
   width: 165px;
   height: 40px;
 }
